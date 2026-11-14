@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14251f"><title>Galante Survival v81 — исправленная карта</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14251f"><title>Galante Survival v82 — исправление позиции на биоме</title>
 <style>
 :root{--text:#f5f0e1;--gold:#ddba78;--muted:#acb9ad;--glass:rgba(13,26,23,.82)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#152725;overflow:hidden;color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;user-select:none}button,input{font:inherit}button{cursor:pointer}button:focus-visible{outline:2px solid #fbe2a0;outline-offset:2px}#sky,#world{position:fixed;inset:0;width:100%;height:100%;display:block}#sky{z-index:0}#world{z-index:1;touch-action:none}#vignette{position:fixed;inset:0;z-index:2;background:radial-gradient(ellipse at center,transparent 38%,rgba(5,13,12,.29) 100%);pointer-events:none}#damage{position:fixed;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse,transparent 40%,rgba(226,37,37,.5));opacity:0;transition:opacity .15s}#ui{position:fixed;inset:0;z-index:4;pointer-events:none}#top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding:14px;flex-wrap:wrap}.leftstats{display:flex;gap:8px;flex-wrap:wrap}.pill,.task,#brand,.keytip,.toast,.action,.hotbar,.zone{background:var(--glass);backdrop-filter:blur(12px);border:1px solid #9fbda443;box-shadow:0 8px 26px #0007;border-radius:11px}.pill{padding:9px 13px;font-size:12px;white-space:nowrap;font-weight:800}.stat-icon{margin-right:7px}.progress{display:block;height:4px;margin-top:6px;border-radius:5px;background:#5a5d5394;overflow:hidden;width:95px}.progress i{display:block;height:100%;background:linear-gradient(90deg,#70b191,#a5dd9b);width:100%;transition:width .2s}.righttop{display:flex;flex-direction:column;align-items:flex-end;gap:7px;max-width:270px}#brand{font-size:11px;letter-spacing:1px;color:#d7f2df;padding:8px 11px;font-weight:900}.task{font-size:12px;padding:10px 12px;color:#ecdcae;line-height:1.5;font-weight:700}.zone{font-size:11px;letter-spacing:1.2px;padding:7px 12px;color:#e9c895}.reticle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:22px;height:22px;display:grid;place-items:center;opacity:.84;color:#f6ead4;font-size:24px;text-shadow:0 0 6px #000}#interact{position:absolute;bottom:144px;left:50%;transform:translateX(-50%);max-width:min(560px,90vw);background:#13241ce3;border:1px solid #eac78b6b;color:#e8dfc2;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:800;text-align:center;display:none}#actionMsg{position:absolute;left:50%;bottom:198px;transform:translateX(-50%);color:#e9e1c1;font-size:16px;font-weight:950;text-shadow:0 2px 13px #000;text-align:center}.keytip{position:absolute;left:50%;bottom:99px;transform:translateX(-50%);white-space:nowrap;font-size:11px;padding:7px 14px;color:#cfddcf}#toasts{position:absolute;left:50%;top:18%;transform:translateX(-50%);display:flex;flex-direction:column;gap:6px;align-items:center}.toast{padding:11px 17px;font-weight:900;font-size:13px;max-width:min(500px,90vw);text-align:center;animation:fadein .25s}@keyframes fadein{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}.hotbar{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:7px;max-width:calc(100vw - 24px);overflow-x:auto;pointer-events:auto;scrollbar-width:none}.hotbar button{border-radius:8px;min-width:82px;padding:7px 10px;background:#23352ded;color:#dfebdc;border:1px solid #99b29b5a;font-size:11px;font-weight:850;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px}.hotbar button .itemIcon{font-size:23px}.hotbar button.selected{background:#776038;border-color:#fad28b;color:#fff4c9;box-shadow:0 0 16px #e4c17455}.hotbar button.actionBtn{min-width:90px;background:#2a423c}.hotbar button small{font-size:9px;color:#c0cbbb}.hotbar button.selected small{color:#f8e3a6}#crosshairTarget{position:absolute;left:50%;top:57%;transform:translateX(-50%);font-size:11px;color:#eec88b;font-weight:900;text-shadow:0 2px 8px black}#menu{position:fixed;inset:0;z-index:10;display:grid;place-items:center;background:linear-gradient(90deg,#0a1312e9 0%,#0b1511bd 46%,#08100b42 100%),linear-gradient(135deg,#243f36,#0d201c);padding:18px;overflow:auto}#menu.hidden{display:none}.splash{max-width:580px;width:100%;padding:34px;border:1px solid #d9bd7d55;border-radius:24px;background:linear-gradient(130deg,#101d1bea,#121e1b88);backdrop-filter:blur(9px);box-shadow:0 26px 95px #000d}.eyebrow{font-size:10px;letter-spacing:3px;color:#ccb98b;font-weight:900}.splash h1{font-size:clamp(40px,6vw,65px);line-height:1;margin:16px 0 10px;letter-spacing:-2px;color:#f7ebc8}.splash h1 span{display:block;color:#c3d39b;font-size:.65em;letter-spacing:2px;margin-top:4px}.splash p{max-width:480px;color:#c8d1c8;line-height:1.75;font-size:14px}.splash .introbox{border-left:3px solid #aabb86;padding-left:14px;margin:24px 0 20px;color:#e8e2cd;font-size:13px;line-height:1.8}.primary{background:linear-gradient(110deg,#dfbd7e,#f0d99e);border:0;color:#1a281e;padding:15px 25px;border-radius:11px;font-weight:1000;width:100%;font-size:15px;box-shadow:0 10px 33px #0008}.secondary{border:1px solid #8da78b88;background:#23372c;color:#ecf0df;padding:11px 15px;border-radius:10px;font-weight:800}.splash small{display:block;margin-top:17px;font-size:11px;color:#a2b6a8}.splash .controls{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}.controlKey{background:#1a3025;border:1px solid #72856c66;padding:6px 8px;border-radius:7px;font-size:11px}#modal{position:fixed;inset:0;z-index:12;background:#07120eee;display:none;place-items:center;padding:18px;backdrop-filter:blur(8px)}#modal.open{display:grid}#modalBox{width:min(740px,100%);max-height:86vh;overflow:auto;padding:24px;background:linear-gradient(145deg,#1d302b,#0d1817);border:1px solid #c0ad7a77;border-radius:18px;box-shadow:0 23px 95px #000d}#modalHeader{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:14px}#modalTitle{font-size:24px;font-weight:1000;color:#f4e5ba}#close{background:#293b34;border:1px solid #9aad95;color:#fff;border-radius:8px;padding:8px 13px}.contentNote{color:#c0d0c2;font-size:13px;line-height:1.6;margin:0 0 13px}.itemsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.invItem,.recipe{background:#243c34;border:1px solid #94af9855;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}.invIcon{font-size:28px}.invItem strong,.recipe strong{font-size:13px}.invItem span{color:#cfdaad;font-size:13px}.recipe small{color:#b5c9b7;line-height:1.5;min-height:30px}.recipe button{border:1px solid #e9cc8d;background:#a27e43;color:#fff8e5;border-radius:9px;padding:8px;font-weight:900}.recipe button:disabled{opacity:.5;cursor:not-allowed}.minimap{position:absolute;right:15px;top:157px;border-radius:11px;border:1px solid #b9c9aa6d;background:#101d18bd;box-shadow:0 9px 25px #0007}#touch{display:none;position:fixed;inset:0;z-index:6;pointer-events:none}#touch button{pointer-events:auto;background:#19342cc9;color:white;border:1px solid #a2cbb6;border-radius:12px;padding:14px;font-weight:900}#touchmove{position:absolute;left:22px;bottom:100px;width:120px;height:120px;border:2px solid #e2d9a888;border-radius:50%;pointer-events:auto;touch-action:none;background:#193d3185}#touchstick{position:absolute;left:38px;top:38px;width:40px;height:40px;border-radius:50%;background:#c8d0afad}#touchactions{position:absolute;right:15px;bottom:116px;display:flex;flex-direction:column;gap:10px}#turnTouch{position:absolute;right:12px;top:250px;display:flex;gap:7px}@media(pointer:coarse){#touch{display:block}.keytip{display:none}.minimap{top:225px;width:100px;height:100px}#interact{bottom:185px}}@media(max-width:660px){#top{padding:7px;gap:3px}.pill{font-size:10px;padding:7px}.progress{width:65px}.righttop{max-width:205px}.task{font-size:10px}.hotbar{bottom:6px}.hotbar button{min-width:60px;padding:6px;font-size:9px}.hotbar button .itemIcon{font-size:19px}.splash{padding:19px}.itemsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}#interact{font-size:10px}#brand{display:none}}@media(max-height:680px){.splash{padding:17px}.splash h1{margin:10px 0}.splash p{margin:5px}.splash .introbox{margin:10px 0}.hotbar button{padding:5px 8px}}
 .guideSteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}.guideStep{border:1px solid #6a826c88;border-radius:13px;background:#152e27;padding:14px}.guideStep strong{color:#f3d28f}.guideStep p{line-height:1.5;color:#d9e1d4;margin:8px 0 0}#helpBtn:hover{filter:brightness(1.3)}@media(max-width:700px){#helpBtn{bottom:150px!important;font-size:11px;padding:8px!important}}
@@ -12,9 +12,9 @@
 
 </head><body>
 <canvas id="sky"></canvas><canvas id="world" tabindex="0" aria-label="Трёхмерный игровой мир"></canvas><div id="vignette"></div><div id="damage"></div>
-<div id="ui"><div id="top"><div class="leftstats"><div class="pill"><span class="stat-icon">❤️</span><span id="hpText">100</span><span class="progress"><i id="hpBar" style="background:#e37e74"></i></span></div><div class="pill"><span class="stat-icon">🍖</span><span id="foodText">100</span><span class="progress"><i id="foodBar" style="background:#e5b467"></i></span></div><div class="pill"><span class="stat-icon">⚡</span><span id="staminaText">100</span><span class="progress"><i id="staminaBar"></i></span></div><div class="pill" id="resourceHud">🪵 0 · 🪨 0 · ⚙️ 0</div><div class="pill" id="dayHud">☀️ День 1</div></div><div class="righttop"><div id="brand">🌲 GALANTE GAMES · v81</div><div class="task" id="questHud">🎯 Собери 12 дерева и 8 камня</div><div class="zone" id="zoneHud">БЕЗОПАСНАЯ ПОЛЯНА</div></div></div><canvas class="minimap" id="mini" width="150" height="150"></canvas><div class="reticle">+</div><div id="crosshairTarget"></div><div id="toasts"></div><div id="actionMsg"></div><div id="interact"></div><div class="keytip">WASD — движение · мышь — обзор · E — добыть · ЛКМ — удар · I — рюкзак · C — крафт · B — стройка · Space — прыжок</div><div class="hotbar" id="hotbar"><div id="quickSlots" class="quickSlots"></div><button data-modal="inventory" class="actionBtn"><span class="itemIcon">🎒</span>Рюкзак<small>[I]</small></button><button data-modal="craft" class="actionBtn"><span class="itemIcon">🔨</span>Крафт<small>[C]</small></button><button data-modal="build" class="actionBtn"><span class="itemIcon">🏠</span>Стройка<small>[B]</small></button><button id="pauseButton" class="actionBtn"><span class="itemIcon">☰</span>Меню<small>[Esc]</small></button></div></div>
+<div id="ui"><div id="top"><div class="leftstats"><div class="pill"><span class="stat-icon">❤️</span><span id="hpText">100</span><span class="progress"><i id="hpBar" style="background:#e37e74"></i></span></div><div class="pill"><span class="stat-icon">🍖</span><span id="foodText">100</span><span class="progress"><i id="foodBar" style="background:#e5b467"></i></span></div><div class="pill"><span class="stat-icon">⚡</span><span id="staminaText">100</span><span class="progress"><i id="staminaBar"></i></span></div><div class="pill" id="resourceHud">🪵 0 · 🪨 0 · ⚙️ 0</div><div class="pill" id="dayHud">☀️ День 1</div></div><div class="righttop"><div id="brand">🌲 GALANTE GAMES · v82</div><div class="task" id="questHud">🎯 Собери 12 дерева и 8 камня</div><div class="zone" id="zoneHud">БЕЗОПАСНАЯ ПОЛЯНА</div></div></div><canvas class="minimap" id="mini" width="150" height="150"></canvas><div class="reticle">+</div><div id="crosshairTarget"></div><div id="toasts"></div><div id="actionMsg"></div><div id="interact"></div><div class="keytip">WASD — движение · мышь — обзор · E — добыть · ЛКМ — удар · I — рюкзак · C — крафт · B — стройка · Space — прыжок</div><div class="hotbar" id="hotbar"><div id="quickSlots" class="quickSlots"></div><button data-modal="inventory" class="actionBtn"><span class="itemIcon">🎒</span>Рюкзак<small>[I]</small></button><button data-modal="craft" class="actionBtn"><span class="itemIcon">🔨</span>Крафт<small>[C]</small></button><button data-modal="build" class="actionBtn"><span class="itemIcon">🏠</span>Стройка<small>[B]</small></button><button id="pauseButton" class="actionBtn"><span class="itemIcon">☰</span>Меню<small>[Esc]</small></button></div></div>
 <div id="touch"><div id="touchmove"><div id="touchstick"></div></div><div id="touchactions"><button id="touchHit">⚔️ УДАР</button><button id="touchUse">✋ ДОБЫТЬ</button><button id="touchJump">↑ ПРЫЖОК</button></div><div id="turnTouch"><button id="leftTurn">↶</button><button id="rightTurn">↷</button></div></div>
-<div id="menu"><div class="splash"><div class="eyebrow">GALANTE GAMES · v81 · ЖИВОЙ ЛЕС · КЛАДБИЩЕ · ВЫЖИВАНИЕ</div><h1>ДИКИЕ ЗЕМЛИ<span>GALANTE SURVIVAL</span></h1><p>Приди в себя на окраине заброшенного леса. Собирай ресурсы, создай укрытие и не заходи в заражённые земли без оружия.</p><div class="introbox"><b>ГЛАВА I: ПЕРВЫЙ ЛАГЕРЬ · V65</b><br>01. Булыжником добудь древесину и камень.<br>02. Создай топор и кирку в крафте [C].<br>03. Исследуй болото и отбей нападение заражённых.</div><button id="start" class="primary">▶ НАЧАТЬ ВЫЖИВАНИЕ</button><div class="controls"><span class="controlKey">WASD · ходьба</span><span class="controlKey">Мышь · осмотр</span><span class="controlKey">E · добыча</span><span class="controlKey">ЛКМ · атака</span><span class="controlKey">I / C / B · меню</span></div><small>Самостоятельная игра в жанре выживания. Мир отрисовывается в реальном времени, изображение используется только для заставки. Автосохранение в браузере.</small></div></div>
+<div id="menu"><div class="splash"><div class="eyebrow">GALANTE GAMES · v82 · ЖИВОЙ ЛЕС · КЛАДБИЩЕ · ВЫЖИВАНИЕ</div><h1>ДИКИЕ ЗЕМЛИ<span>GALANTE SURVIVAL</span></h1><p>Приди в себя на окраине заброшенного леса. Собирай ресурсы, создай укрытие и не заходи в заражённые земли без оружия.</p><div class="introbox"><b>ГЛАВА I: ПЕРВЫЙ ЛАГЕРЬ · V65</b><br>01. Булыжником добудь древесину и камень.<br>02. Создай топор и кирку в крафте [C].<br>03. Исследуй болото и отбей нападение заражённых.</div><button id="start" class="primary">▶ НАЧАТЬ ВЫЖИВАНИЕ</button><div class="controls"><span class="controlKey">WASD · ходьба</span><span class="controlKey">Мышь · осмотр</span><span class="controlKey">E · добыча</span><span class="controlKey">ЛКМ · атака</span><span class="controlKey">I / C / B · меню</span></div><small>Самостоятельная игра в жанре выживания. Мир отрисовывается в реальном времени, изображение используется только для заставки. Автосохранение в браузере.</small></div></div>
 <button id="helpBtn" title="Обучение и управление (H)" style="position:fixed;left:12px;bottom:90px;z-index:8;background:#19352d;color:#f7e5b4;border:1px solid #78917b;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer">❔ ПОМОЩЬ [H]</button><div id="modal"><div id="modalBox"><div id="modalHeader"><strong id="modalTitle">Рюкзак</strong><button id="close">✕ Закрыть</button></div><div id="modalContent"></div></div></div>
 <script>
 'use strict';
@@ -1022,19 +1022,48 @@ const loader=new GLTFLoader();
 const terrainRay=new THREE.Raycaster();
 const down=new THREE.Vector3(0,-1,0);
 let biomeRoot=null, biomeTop=100, lastGround=0;
-let lastGroundX=NaN,lastGroundZ=NaN;
+let lastGroundX=NaN,lastGroundZ=NaN, safeX=0,safeZ=0,safeY=0;
+let mapBounds=null;
+// Find actual solid geometry under the camera. Never silently reuse a height from
+// another location: that was leaving the camera suspended outside the island.
+function terrainHit(x,z){
+ if(!biomeRoot)return null;
+ terrainRay.set(new THREE.Vector3(x,biomeTop+50,z),down);
+ terrainRay.near=0;terrainRay.far=Math.max(2000,biomeTop+2000);
+ const hits=terrainRay.intersectObject(biomeRoot,true);
+ for(const hit of hits){
+   if(Number.isFinite(hit.point.y) && hit.face && hit.face.normal){
+     const normal=hit.face.normal.clone().transformDirection(hit.object.matrixWorld);
+     if(normal.y>0.45)return hit.point.y;
+   }
+ }
+ return null;
+}
 function groundAt(x,z){
  if(!biomeRoot)return 0;
  if(Math.hypot(x-lastGroundX,z-lastGroundZ)<0.14)return lastGround;
- terrainRay.set(new THREE.Vector3(x,biomeTop+25,z),down);
- terrainRay.far=biomeTop+2000;
- // Meshes in this GLB may have several layers; choose the top visible terrain.
- const hits=terrainRay.intersectObject(biomeRoot,true);
- const ground=hits.length?hits[0].point.y:null;
- if(ground!==null && Number.isFinite(ground)){
-   lastGround=ground;lastGroundX=x;lastGroundZ=z;
+ const y=terrainHit(x,z);
+ if(y!==null){lastGround=y;lastGroundX=x;lastGroundZ=z;safeX=x;safeZ=z;safeY=y;return y;}
+ return null;
+}
+function findSafeSpawn(preferX,preferZ){
+ const b=mapBounds;
+ const width=b.max.x-b.min.x,depth=b.max.z-b.min.z;
+ const cx=(b.min.x+b.max.x)/2,cz=(b.min.z+b.max.z)/2;
+ const candidates=[[preferX,preferZ],[cx,cz]];
+ // Scan the island interior, not its bounding-box edge or an empty gap.
+ for(const radius of [.08,.18,.3,.42]){
+   for(let i=0;i<16;i++){
+     const angle=i*Math.PI/8;
+     candidates.push([cx+Math.cos(angle)*width*radius,cz+Math.sin(angle)*depth*radius]);
+   }
  }
- return ground===null?lastGround:ground;
+ for(const [x,z] of candidates){
+   if(x<b.min.x+1||x>b.max.x-1||z<b.min.z+1||z>b.max.z-1)continue;
+   const y=terrainHit(x,z);
+   if(y!==null){safeX=x;safeZ=z;safeY=y;lastGround=y;lastGroundX=x;lastGroundZ=z;return {x,z,y};}
+ }
+ return null;
 }
 // v78: GitHub-safe chunks of the exact original GLB, no substitute world.
 async function loadOriginalBiome(){
@@ -1049,7 +1078,7 @@ async function loadOriginalBiome(){
    const timeout=setTimeout(()=>controller.abort(),180000);
    try{
     status.textContent=`Биом ${i+1}/${count}: подключение (попытка ${attempt}/4)…`;
-    const response=await fetch(file+'?asset=v81',{signal:controller.signal,cache:'default'});
+    const response=await fetch(file+'?asset=v82',{signal:controller.signal,cache:'default'});
     if(!response.ok)throw new Error('HTTP '+response.status+' '+response.url);
     const expected=Number(response.headers.get('content-length'))||0;
     let buffer;
@@ -1110,20 +1139,16 @@ loadOriginalBiome().then(gltf=>{
  const placedBounds=new THREE.Box3().setFromObject(model);
  biomeTop=placedBounds.max.y;
  biomeRoot=model;
- // Reset old saved coordinates if they fall outside the actual map.
+ // Locate a REAL walkable polygon on the imported island before moving the camera.
+ mapBounds=placedBounds;
  const p=window.__galantePlayer;
- if(p){
-   const margin=4;
-   if(p.x<placedBounds.min.x+margin||p.x>placedBounds.max.x-margin||p.z<placedBounds.min.z+margin||p.z>placedBounds.max.z-margin){p.x=0;p.z=0;}
-   // Start in the middle of the supplied biome, not in empty sky.
-   p.x=THREE.MathUtils.clamp(p.x,placedBounds.min.x+margin,placedBounds.max.x-margin);
-   p.z=THREE.MathUtils.clamp(p.z,placedBounds.min.z+margin,placedBounds.max.z-margin);
-   lastGround=placedBounds.min.y;
-   groundAt(p.x,p.z);
- }
+ const spawn=findSafeSpawn(p?.x??0,p?.z??0);
+ if(!spawn)throw new Error('В модели не найдена поверхность земли. Проверь ориентацию GLB.');
+ if(p){p.x=spawn.x;p.z=spawn.z;p.jump=0;p.velocityY=0;p.pitch=0;}
+ console.info('Биом: безопасная точка появления',spawn);
  camera.far=Math.max(700,Math.min(3000,longest*scale*3));camera.updateProjectionMatrix();
  window.__biomesLoaded=true;
- status.textContent='✓ Биом загружен · игрок на поверхности карты';setTimeout(()=>status.remove(),4000);
+ status.textContent='✓ Биом загружен · найдено место на поверхности';setTimeout(()=>status.remove(),4000);
  console.info('Minecraft Biomes GLB loaded; scale and bounds:',size,scale,placedBounds);
 }).catch(err=>{
  status.textContent='Ошибка биома: '+(err?.message||err)+' · смотри Console (F12)';
@@ -1132,9 +1157,17 @@ loadOriginalBiome().then(gltf=>{
 function frame(){requestAnimationFrame(frame);
  if(!window.__biomesLoaded)return;
  const p=window.__galantePlayer;
- if(p){camera.position.set(p.x,groundAt(p.x,p.z)+(p.crouch?1.04:1.7)+(p.jump||0),p.z);
- const pitch=p.pitch||0,yaw=p.yaw||0;
- camera.lookAt(p.x+Math.sin(yaw)*Math.cos(pitch),camera.position.y+Math.sin(pitch),p.z+Math.cos(yaw)*Math.cos(pitch));}
+ if(p){
+   let y=groundAt(p.x,p.z);
+   if(y===null){
+     // No terrain under the player: return to last known safe ground.
+     p.x=safeX;p.z=safeZ;p.jump=0;p.velocityY=0;
+     y=safeY;
+   }
+   camera.position.set(p.x,y+(p.crouch?1.04:1.7)+(p.jump||0),p.z);
+   const pitch=p.pitch||0,yaw=p.yaw||0;
+   camera.lookAt(p.x+Math.sin(yaw)*Math.cos(pitch),camera.position.y+Math.sin(pitch),p.z+Math.cos(yaw)*Math.cos(pitch));
+ }
  renderer.render(scene,camera);
 }
 window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
